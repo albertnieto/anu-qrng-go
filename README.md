@@ -7,18 +7,21 @@ package main
 
 import (
     "fmt"
-    "github.com/yourusername/anu-qrng-go"
+    "github.com/albertnieto/anu-qrng-go"
 )
 
 func main() {
     client := qrng.NewClient()
+    // client := qrng.NewClientWithAPIKey("KEY")
     
     // Flip 8 quantum coins
     bits, _ := client.GetRandomBits(8) 
-    fmt.Println("Quantum bits:", bits) // e.g., [1 0 1 1 0 1 0 1]
+    fmt.Println("Quantum bits:", bits) 
+    // e.g., [1 0 1 1 0 1 0 1]
     
     // Generate lottery number (1-100)
     num, _ := client.GetRandomNumber(1, 100)
-    fmt.Println("Lucky number:", num) // e.g., 57
+    fmt.Println("Lucky number:", num) 
+    // e.g., 57
 }
 ```
